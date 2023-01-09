@@ -11,12 +11,14 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'components/Layout';
 import RegisterPage from '../../pages/Register';
+import LoginPage from '../../pages/Login';
 
 export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Route>
     </Routes>
   );
