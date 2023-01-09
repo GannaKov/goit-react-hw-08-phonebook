@@ -13,14 +13,25 @@ import { Layout } from 'components/Layout';
 import RegisterPage from '../../pages/Register';
 import LoginPage from '../../pages/Login';
 import HomePage from '../../pages/Home';
+import { RestrictedRoute } from 'components/RestrictedRoute';
 
 export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />;
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute redirectTo="/tasks" component={<RegisterPage />} />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />
+          }
+        />
       </Route>
     </Routes>
   );
