@@ -1,14 +1,21 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import { filtersReducer } from './filterSlice';
-import { contactsReducer } from './contactsSlice';
+import { configureStore } from '@reduxjs/toolkit';
+//import { filtersReducer } from './filterSlice';
+//import { contactsReducer } from './contactsSlice';
 // import { tasksReducer } from './tasks/slice';
-// import { authReducer } from './auth/slice';
+import { authReducer } from './auth/slice';
+
 export const store = configureStore({
   reducer: {
-    contacts: contactsReducer,
-    filter: filtersReducer,
+    auth: authReducer,
   },
 });
+
+//export const store = configureStore({
+//   reducer: {
+//     contacts: contactsReducer,
+//     filter: filtersReducer,
+//   },
+// });
 // import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 // import {
 //   persistStore,
@@ -48,4 +55,4 @@ export const store = configureStore({
 //   devTools: process.env.NODE_ENV === 'development',
 // });
 
-// export const persistor = persistStore(store);
+//export const persistor = persistStore(store);
