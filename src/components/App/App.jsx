@@ -9,6 +9,7 @@
 // import { Filter } from 'components/Fiter/Filter';
 // import { Title } from './App.styled';
 import { Route, Routes } from 'react-router-dom';
+import { GlobalStyle } from 'CreateGlobalStyle';
 import { Layout } from 'components/Layout';
 import RegisterPage from '../../pages/Register';
 import LoginPage from '../../pages/Login';
@@ -19,32 +20,38 @@ import { PrivateRoute } from 'components/PrivateRoute';
 // AnnaK AnnaK@mail.com       AnnaK@mail.com
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />;
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute
-              redirectTo="/contacts"
-              component={<RegisterPage />}
-            />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
-          }
-        />
-        <Route
-          path="/contacts"
-          element={
-            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
-          }
-        />
-      </Route>
-    </Routes>
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />;
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<RegisterPage />}
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<LoginPage />}
+              />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            }
+          />
+        </Route>
+      </Routes>
+      <GlobalStyle />
+    </div>
   );
 };
 

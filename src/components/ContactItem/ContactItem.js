@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ContactItemSpan } from './ContactItem.styled';
 
-export function ContactItem({ contact: { name, phone } }) {
+export function ContactItem({ contact: { name, number } }) {
   return (
     <>
       <ContactItemSpan>
-        {name}: {phone}
+        {name}: {number}
       </ContactItemSpan>
     </>
   );
