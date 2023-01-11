@@ -2,14 +2,15 @@
 // import { logOut } from 'redux/auth/operations';
 // import { useAuth } from 'hooks';
 import { Wrapper, UserData } from './UserMenu.styled';
+import { useAuth } from 'hooks/useAuth';
 
 export const UserMenu = () => {
   //   const dispatch = useDispatch();
-  //   const { user } = useAuth();
+  const { user } = useAuth();
 
   return (
     <Wrapper>
-      <UserData>Welcome, user</UserData>
+      <UserData>Welcome, {user.name}</UserData>
       <UserData>mango@mail.com</UserData>
       <button type="button">Logout</button>
     </Wrapper>
