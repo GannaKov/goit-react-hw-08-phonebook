@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { putFilter } from 'redux/filterSlice';
+import { putFilter } from 'redux/contacts/filterSlice';
 import { FiltrLabel, FiltrInput } from './Filter.styled';
 
 export const Filter = () => {
