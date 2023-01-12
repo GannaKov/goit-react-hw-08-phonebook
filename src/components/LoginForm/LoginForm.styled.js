@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Form = styled.form`
   width: 320px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Label = styled.label`
