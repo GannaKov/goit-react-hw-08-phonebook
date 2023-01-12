@@ -2,7 +2,6 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
-//axios.defaults.baseURL = 'https://goit-task-manager.herokuapp.com/';
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -17,7 +16,6 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post('/users/signup', credentials);
       setAuthHeader(res.data.token);
-
       return res.data;
     } catch (error) {
       if (error.response.data.name) {
@@ -27,11 +25,10 @@ export const register = createAsyncThunk(
     }
   }
 );
-//.data.keyValue.name    response.data)${name}
-// /*
+
 //  * POST @ /users/login
 //  * body: { email, password }
-//  */
+
 export const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
@@ -47,10 +44,10 @@ export const logIn = createAsyncThunk(
   }
 );
 
-// /*
+
 //  * POST @ /users/logout
 //  * headers: Authorization: Bearer token
-//  */
+
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('/users/logout');
@@ -61,10 +58,10 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   }
 });
 
-// /*
+
 //  * GET @ /users/current
 //  * headers: Authorization: Bearer token
-//  */
+
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {

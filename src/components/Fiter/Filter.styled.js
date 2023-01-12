@@ -9,7 +9,7 @@ export const FiltrInput = styled.input`
     padding-left: 10px;
     width: 300px;
     height: 40px;
-margin-bottom:20px;
+    margin-bottom:20px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     @include transitions(border-color);

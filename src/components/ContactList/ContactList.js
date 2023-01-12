@@ -24,7 +24,6 @@ export function ContactsList() {
           <ContactItem contact={contact} />
           <FiltrSubmitBtn
             type="button"
-            // onClick={() => handleDeleteContact(contact.id)}
             onClick={() => dispatch(deleteContact(contact.id))}
           >
             Удалить

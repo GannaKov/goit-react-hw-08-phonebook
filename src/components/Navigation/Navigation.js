@@ -1,10 +1,8 @@
-// import { useAuth } from 'hooks';
 import { LinkNav } from './Navigation.styled';
 import { useAuth } from 'hooks/useAuth';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
-  // const isLoggedIn = false;
 
   return (
     <nav>

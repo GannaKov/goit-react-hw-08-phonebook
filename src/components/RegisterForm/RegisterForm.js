@@ -37,4 +37,3 @@ export const RegisterForm = () => {
     </Form>
   );
 };
-//<form className={css.form} onSubmit={handleSubmit} autoComplete="off">
