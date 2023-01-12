@@ -15,7 +15,7 @@ export const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
-    console.log('in handleSubmit', form.elements.name.value);
+
     form.reset();
   };
 
