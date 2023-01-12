@@ -1,13 +1,3 @@
-// import { useSelector, useDispatch } from 'react-redux';
-// import { useEffect } from 'react';
-// import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
-// import { GlobalStyle } from 'CreateGlobalStyle';
-// import { fetchContacts } from 'redux/operations';
-// import { ContainerWrap } from 'components/Section/Section';
-// import { ContactForm } from 'components/ContactForm/ContactForm';
-// import { ContactsList } from 'components/ContactList/ContactList';
-// import { Filter } from 'components/Fiter/Filter';
-// import { Title } from './App.styled';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -31,7 +21,7 @@ export const App = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />;
@@ -62,7 +52,7 @@ export const App = () => {
         </Route>
       </Routes>
       <GlobalStyle />
-    </div>
+    </>
   );
 };
 
