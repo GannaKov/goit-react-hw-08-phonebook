@@ -41,6 +41,7 @@ export const logIn = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
+      alert(`Check the password and login.Or register please!`);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
