@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 // import { logIn } from 'redux/auth/operations';
 import { Form, Label } from './LoginForm.styled';
 import { logIn } from 'redux/auth/operations';
+import { LogInBtn } from './LoginForm.styled';
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
@@ -27,7 +28,7 @@ export const LoginForm = () => {
         Password
         <input type="password" name="password" />
       </Label>
-      <button type="submit">Log In</button>
+      <LogInBtn type="submit">Log In</LogInBtn>
     </Form>
   );
 };

@@ -74,7 +74,7 @@ export const ContactForm = () => {
           onChange={handleChange}
         />
       </FormLabel>
-      <ModalSubmitBtn type="submit">Add Conract</ModalSubmitBtn>
+      <ModalSubmitBtn type="submit">Add Contact</ModalSubmitBtn>
     </Form>
   );
 };
