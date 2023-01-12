@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { Title } from './Contacts.styled';
+import { Title, Img } from './Contacts.styled';
 import { fetchContacts } from 'redux/contacts/operations';
 import {
   selectIsLoading,
@@ -12,6 +12,7 @@ import { ContainerWrap } from 'components/Section/Section';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactsList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Fiter/Filter';
+import sleepcat from '../../images/sleepcat.png';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -35,10 +36,12 @@ export default function Contacts() {
       <ContainerWrap title="Contacts">
         <Filter />
         {isLoading && !error && <b>Request in progress...</b>}
-        {items.length > 0 && <ContactsList />}
+        {items.length > 0 ? (
+          <ContactsList />
+        ) : (
+          <Img src={sleepcat} alt="cat" width={150} />
+        )}
       </ContainerWrap>
     </>
   );
 }
-
-
